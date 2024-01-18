@@ -1,0 +1,12 @@
+<!-- create_sub_admin.html -->
+{% extends "base.html" %}
+{% block content %}
+<h2>Create Sub Admin</h2>
+<form method="POST" action="{{ url_for('create_sub_admin') }}">
+    {{ form.hidden_tag() }}
+    {{ form.username.label }} {{ form.username() }}
+    {{ form.password.label }} {{ form.password() }}
+    {{ form.role.label }} {{ form.role() }}
+    {{ form.submit() }}
+</form>
+{% endblock %}

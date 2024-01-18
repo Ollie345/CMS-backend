@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home"></a>Home</li>
+            <li><a href="#manage-content">Manage Content</a></li>
+            <li><a href="#logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h1>Welcome, {{ username }}</h1>
+        <p>You are logged in a an admin.</p>
+    </section>
+
+    <section id="manage-content">
+        <h2>Manage Content</h2>
+
+         <!-- Content Management Form -->
+    <form action="{{ url_for('admin.manage_content') }}" method="post">
+        <label for="title">Title:</label>
+        <input type="text" name="title" required>
+        
+        <label for="body">Body:</label>
+        <textarea name="body" rows="4" required></textarea>
+        
+        <button type="submit">Add Content</button>
+      </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Ideas House</p>
+    </footer>
+</body>
+</html>
