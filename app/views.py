@@ -8,6 +8,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from .auth import auth_blueprint, LoginForm, CreateSubAdminForm, AssignRoleForm
 from .models import User, db
 from app import db
+from .extensions import db
 from .bcrypt import generate_password_hash, check_password_hash
 
 

@@ -1,6 +1,7 @@
 # STAGE TWO: USER AUTHENTICATION
 
 from flask import Blueprint
+from .extensions import db
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, SelectField
 from wtforms.validators import InputRequired, Length, ValidationError

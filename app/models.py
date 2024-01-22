@@ -4,6 +4,8 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from . import db
+from .extensions import db
+
 
 app = Flask(__name__)
 db = SQLAlchemy()  # DATABASE OBJECT

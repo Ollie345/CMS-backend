@@ -1,7 +1,7 @@
 from app.views import views_blueprint
 from app.auth import auth_blueprint
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+from .extensions import db
 from flask_login import LoginManager
 
 app = Flask(__name__)  # INSTANCE OF THE APP
@@ -9,7 +9,7 @@ app = Flask(__name__)  # INSTANCE OF THE APP
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:Oregunwa_19@localhost/users'
 # app.config['SECRET_KEY'] = 'thisisasecretkey'
-db = SQLAlchemy(app)
+db.init_app(app)
 
 
 login_manager = LoginManager()
